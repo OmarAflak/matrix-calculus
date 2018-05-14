@@ -1,4 +1,4 @@
-#include "../include/Frac.h"
+#include "../include/frac.h"
 
 Frac::Frac(){
     m_num = 0;
@@ -62,6 +62,7 @@ std::istream& operator>>(std::istream& is, Frac& a){
         a.m_num = std::stoi(word.substr(0, pos));
         a.m_den = std::stoi(word.substr(pos+1));
     }
+    return is;
 }
 
 Frac operator+(const Frac& a, const Frac& b){

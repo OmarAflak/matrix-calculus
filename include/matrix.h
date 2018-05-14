@@ -1,7 +1,7 @@
 #ifndef MATRIX
 #define MATRIX
 
-#include "Frac.h"
+#include "frac.h"
 
 #include <iostream>
 #include <fstream>

@@ -1,4 +1,4 @@
-#include "../include/Matrix.h"
+#include "../include/matrix.h"
 
 Matrix::Matrix(){
     m_height = 0;
@@ -70,7 +70,10 @@ Matrix Matrix::comatrix() const{
 }
 
 Matrix Matrix::inv() const{
+    assert(m_height==m_width);
     Frac d = det();
+    assert(d.value()!=0);
+
     Matrix tcom = comatrix().transpose();
     for(int i=0 ; i<m_height ; i++){
         for(int j=0 ; j<m_width ; j++){
@@ -158,7 +161,7 @@ void Matrix::print(std::ostream& os) const{
 std::string operator*(const std::string& str, const int& n){
     std::stringstream ss;
     for(int i=0 ; i<n ; i++){
-        ss << " ";
+        ss << str;
     }
     return ss.str();
 }
