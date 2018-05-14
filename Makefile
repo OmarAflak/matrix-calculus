@@ -1,6 +1,6 @@
 CC = g++
 ODIR = obj
-PROG = main
+PROG = matrix
 CXXFLAGS = -Wall -Wextra -std=c++11
 
 OBJS = $(ODIR)/frac.o $(ODIR)/main.o $(ODIR)/matrix.o $(ODIR)/utils.o
@@ -26,3 +26,7 @@ $(ODIR) :
 clean :
 	if [ -d $(ODIR) ]; then rm $(ODIR) -r; fi
 	if [ -f $(PROG) ]; then rm $(PROG); fi
+
+.PHONY : install
+install:
+	sudo cp matrix /bin/matrix
